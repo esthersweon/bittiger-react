@@ -15,7 +15,7 @@ node -v
 npm -v
 ```
 
-### To Start Server
+### To Start Server and Compile JSX to Javascript While Developing
 
 ```sh
 npm install
@@ -23,10 +23,3 @@ npm start
 ```
 
 Visit <http://localhost:3000/>.
-
-
-### To Compile JSX to Javascript While Developing
-
-```sh
-gulp
-```
