@@ -30,7 +30,7 @@ var Twitter = React.createClass({
       <div className="twitter">
         <h1>Tweets</h1>
         <TweetForm onTweetSubmit={ this.handleTweetSubmit } />
-        <TweetList data={ this.state.data } />
+        <TweetList tweets={ this.state.data } />
       </div>
     );
   }
@@ -70,7 +70,7 @@ var TweetForm = React.createClass({
 
 var TweetList = React.createClass({
   render: function () {
-    var tweetData = this.props.data;
+    var tweetData = this.props.tweets;
     var tweetNodes = tweetData.map(function (tweet) {
       return <Tweet author={ tweet.author } text={ tweet.text } />
     });
