@@ -1,7 +1,7 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-var data = [
+var arrOfTweets = [
   {
       "author": "Michael Scott",
       "text": "Would I rather be feared or loved? Easy, both. I want people to be afraid of how much they love me."
