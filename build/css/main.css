@@ -21,13 +21,3 @@ body {
   padding: 25px;
   width: 100%;
 }
-
-.small-apps > :not(:first-child) {
-  margin-top: 20px;
-  padding-top: 20px;
-  border-top: 1px solid #ddd;
-}
-
-.large-app {
-  padding-left: 40px;
-}
