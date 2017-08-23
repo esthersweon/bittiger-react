@@ -1,7 +1,7 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-var arrOfTweets = [
+const arrOfTweets = [
   {
       "author": "Michael Scott",
       "text": "Would I rather be feared or loved? Easy, both. I want people to be afraid of how much they love me."
@@ -12,28 +12,34 @@ var arrOfTweets = [
   }
 ];
 
-var Twitter = React.createClass({
-  // loadTweetsFromServer: function () {
+class Twitter extends React.Component {
+  constructor(props) {
+    super(props);
+    // this.state = {};
+    // this.loadTweetsFromServer = this.loadTweetsFromServer.bind(this);
+    // this.handleTweetSubmit = this.handleTweetSubmit.bind(this);
+  }
+  // loadTweetsFromServer() {
   //   // GET updated set of tweets from database
-  //   $.get(this.props.url, function (data) {
+  //   $.get(this.props.url, (data) => {
   //       // Set state in step 6 of the exercise!
-  //     }.bind(this)
+  //     }
   //   );
-  // },
-  // handleTweetSubmit: function (author, text) {
-  //   var tweet = { author: author, text: text };
+  // }
+  // handleTweetSubmit(author, text) {
+  //   const tweet = { author, text };
   //
   //   // POST to add tweet to database
-  //   $.post(this.props.url, tweet, function (data) {
+  //   $.post(this.props.url, tweet, (data) => {
   //       // Set state in step 10 of the exercise!
-  //     }.bind(this)
+  //     }
   //   );
-  // },
-  // componentDidMount: function () {
+  // }
+  // componentDidMount() {
   //   // Set this.state.data to most recent set of tweets from database
   //   this.loadTweetsFromServer();
-  // },
-  render: function () {
+  // }
+  render() {
     return (
       <div className="twitter">
         <h1>Tweets</h1>
@@ -42,37 +48,42 @@ var Twitter = React.createClass({
       </div>
     );
   }
-});
+}
 
-var TweetForm = React.createClass({
-  render: function () {
+class TweetForm extends React.Component {
+  constructor(props) {
+    super(props);
+    // this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  // handleSubmit(e) {}
+  render() {
     return (
       <form className="tweetForm">
         {/* Render some text here */}
       </form>
     );
   }
-});
+}
 
-var TweetList = React.createClass({
-  render: function () {
+class TweetList extends React.Component {
+  render() {
     return (
       <div className="tweetList">
         {/* Render some text here */}
       </div>
     );
   }
-});
+}
 
-var Tweet = React.createClass({
-  render: function () {
+class Tweet extends React.Component {
+  render() {
     return (
       <div className="tweet">
         {/* Render some text here */}
       </div>
     );
   }
-});
+}
 
 ReactDOM.render(
   <Twitter />,

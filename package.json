@@ -17,6 +17,7 @@
     "webpack": "^1.13.1"
   },
   "scripts": {
+    "babel": "babel --presets es2015 app.js -o build/scripts/bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "webpack",
     "start": "node server.js"
