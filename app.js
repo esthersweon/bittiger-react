@@ -42,9 +42,9 @@ class Twitter extends React.Component {
   render() {
     return (
       <div className="twitter">
-        <h1>Tweets</h1>
-        {/* Render TweetForm component here */}
-        {/* Render TweetList component here */}
+        <h1>These are my tweets!</h1>
+        <TweetForm/>
+        <TweetList/>
       </div>
     );
   }
@@ -59,7 +59,7 @@ class TweetForm extends React.Component {
   render() {
     return (
       <form className="tweetForm">
-        {/* Render some text here */}
+        I am the TweetForm!
       </form>
     );
   }
@@ -69,7 +69,7 @@ class TweetList extends React.Component {
   render() {
     return (
       <div className="tweetList">
-        {/* Render some text here */}
+        I am the TweetList!
       </div>
     );
   }
@@ -79,7 +79,7 @@ class Tweet extends React.Component {
   render() {
     return (
       <div className="tweet">
-        {/* Render some text here */}
+        I am a Tweet!
       </div>
     );
   }
