@@ -44,7 +44,7 @@ class Twitter extends React.Component {
       <div className="twitter">
         <h1>These are my tweets!</h1>
         <TweetForm/>
-        <TweetList/>
+        <TweetList data={ this.props.data } />
       </div>
     );
   }
@@ -69,7 +69,7 @@ class TweetList extends React.Component {
   render() {
     return (
       <div className="tweetList">
-        I am the TweetList!
+        { JSON.stringify(this.props.data) }
       </div>
     );
   }
@@ -86,6 +86,6 @@ class Tweet extends React.Component {
 }
 
 ReactDOM.render(
-  <Twitter />,
+  <Twitter data={ arrOfTweets } />,
   document.getElementById('tweets')
 );
