@@ -67,9 +67,16 @@ class TweetForm extends React.Component {
 
 class TweetList extends React.Component {
   render() {
+    const tweets = this.props.data.map(function(datum) {
+      return <Tweet/>;
+    });
+
+    // ES6
+    // const tweets = this.props.data.map(datum => <Tweet/>);
+
     return (
       <div className="tweetList">
-        { JSON.stringify(this.props.data) }
+        { tweets }
       </div>
     );
   }
