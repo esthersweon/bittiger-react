@@ -5,16 +5,17 @@ class Twitter extends React.Component {
   constructor(props) {
     super(props);
     this.state = { tweets: [] };
-    // this.loadTweetsFromServer = this.loadTweetsFromServer.bind(this);
+    this.loadTweetsFromServer = this.loadTweetsFromServer.bind(this);
     // this.handleTweetSubmit = this.handleTweetSubmit.bind(this);
   }
-  // loadTweetsFromServer() {
-  //   // GET updated set of tweets from database
-  //   $.get(this.props.url, (data) => {
-  //       // Set state in step 6 of the exercise!
-  //     }
-  //   );
-  // }
+  loadTweetsFromServer() {
+    // GET updated set of tweets from database
+    $.get(this.props.url, (fetchedTweets) => {
+        // Set state in step 6 of the exercise!
+        this.setState({ tweets: fetchedTweets })
+      }
+    );
+  }
   // handleTweetSubmit(author, text) {
   //   const tweet = { author, text };
   //
@@ -24,10 +25,10 @@ class Twitter extends React.Component {
   //     }
   //   );
   // }
-  // componentDidMount() {
-  //   // Set this.state.data to most recent set of tweets from database
-  //   this.loadTweetsFromServer();
-  // }
+  componentDidMount() {
+    // Set this.state.data to most recent set of tweets from database
+    this.loadTweetsFromServer();
+  }
   render() {
     return (
       <div className="twitter">
@@ -92,6 +93,6 @@ class Tweet extends React.Component {
 }
 
 ReactDOM.render(
-  <Twitter />,
+  <Twitter url="tweets.json" />,
   document.getElementById('tweets')
 );
