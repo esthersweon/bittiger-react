@@ -46,13 +46,16 @@ class TweetForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleSubmit(e) {
-    alert("You submitted the form!");
+    e.preventDefault();
+    const authorInput = this.refs.author.value;
+    const tweetInput = this.refs.tweet.value;
+    alert("You submitted the form! " + authorInput + " " + tweetInput);
   }
   render() {
     return (
       <form className="tweetForm" onSubmit={ this.handleSubmit }>
-        <input type="text" placeholder="Author Name"/>
-        <input type="text" placeholder="Tweet"/>
+        <input type="text" placeholder="Author Name" ref="author"/>
+        <input type="text" placeholder="Tweet" ref="tweet"/>
         <button className="btn btn-info">Add Tweet</button>
       </form>
     );
