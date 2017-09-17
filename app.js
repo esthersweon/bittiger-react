@@ -6,7 +6,7 @@ class Twitter extends React.Component {
     super(props);
     this.state = { tweets: [] };
     this.loadTweetsFromServer = this.loadTweetsFromServer.bind(this);
-    // this.handleTweetSubmit = this.handleTweetSubmit.bind(this);
+    this.handleTweetSubmit = this.handleTweetSubmit.bind(this);
   }
   loadTweetsFromServer() {
     // GET updated set of tweets from database
@@ -16,15 +16,16 @@ class Twitter extends React.Component {
       }
     );
   }
-  // handleTweetSubmit(author, text) {
-  //   const tweet = { author, text };
-  //
-  //   // POST to add tweet to database
-  //   $.post(this.props.url, tweet, (data) => {
-  //       // Set state in step 10 of the exercise!
-  //     }
-  //   );
-  // }
+  handleTweetSubmit(author, text) {
+    const newTweet = { author, text };
+  
+    // POST to add tweet to database
+    $.post(this.props.url, newTweet, (allMyNewTweets) => {
+        // Set state in step 10 of the exercise!
+        this.setState({ tweets: allMyNewTweets });
+      }
+    );
+  }
   componentDidMount() {
     // Set this.state.data to most recent set of tweets from database
     this.loadTweetsFromServer();
@@ -33,7 +34,7 @@ class Twitter extends React.Component {
     return (
       <div className="twitter">
         <h1>These are my tweets!</h1>
-        <TweetForm/>
+        <TweetForm post={ this.handleTweetSubmit } />
         <TweetList data={ this.state.tweets } />
       </div>
     );
@@ -49,7 +50,8 @@ class TweetForm extends React.Component {
     e.preventDefault();
     const authorInput = this.refs.author.value;
     const tweetInput = this.refs.tweet.value;
-    alert("You submitted the form! " + authorInput + " " + tweetInput);
+    // alert("You submitted the form! " + authorInput + " " + tweetInput);
+    this.props.post(authorInput, tweetInput);
   }
   render() {
     return (

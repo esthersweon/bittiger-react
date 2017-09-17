@@ -1,5 +1,13 @@
 [
     {
+        "author": "Esther",
+        "text": "My new tweet"
+    },
+    {
+        "author": "Esther Weon",
+        "text": "Hello world"
+    },
+    {
         "author": "Michael Scott",
         "text": "I declare BANKRUPTCY!"
     },
