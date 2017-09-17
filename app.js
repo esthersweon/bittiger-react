@@ -68,7 +68,16 @@ class TweetForm extends React.Component {
 class TweetList extends React.Component {
   render() {
     const tweets = this.props.data.map(function(datum) {
-      return <Tweet/>;
+      // first datum: {
+      //     "author": "Michael Scott",
+      //     "text": "Would I rather be feared or loved? Easy, both. I want people to be afraid of how much they love me."
+      // }
+      
+      // second datum: {
+      //     "author": "Jeff Bezos",
+      //     "text": "In the end, we are our choices."
+      // }
+      return <Tweet author={ datum.author } text={ datum.text }/>;
     });
 
     // ES6
@@ -86,7 +95,8 @@ class Tweet extends React.Component {
   render() {
     return (
       <div className="tweet">
-        I am a Tweet!
+        <h1>{ this.props.text }</h1>
+        <p>- { this.props.author }</p>
       </div>
     );
   }
