@@ -49,7 +49,9 @@ class TweetForm extends React.Component {
   render() {
     return (
       <form className="tweetForm">
-        I am the TweetForm!
+        <input type="text" placeholder="Author Name"/>
+        <input type="text" placeholder="Tweet"/>
+        <button className="btn btn-info">Add Tweet</button>
       </form>
     );
   }
