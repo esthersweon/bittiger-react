@@ -1,21 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const arrOfTweets = [
-  {
-      "author": "Michael Scott",
-      "text": "Would I rather be feared or loved? Easy, both. I want people to be afraid of how much they love me."
-  },
-  {
-      "author": "Jeff Bezos",
-      "text": "In the end, we are our choices."
-  }
-];
-
 class Twitter extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = {};
+    this.state = { tweets: [] };
     // this.loadTweetsFromServer = this.loadTweetsFromServer.bind(this);
     // this.handleTweetSubmit = this.handleTweetSubmit.bind(this);
   }
@@ -44,7 +33,7 @@ class Twitter extends React.Component {
       <div className="twitter">
         <h1>These are my tweets!</h1>
         <TweetForm/>
-        <TweetList data={ this.props.data } />
+        <TweetList data={ this.state.tweets } />
       </div>
     );
   }
@@ -72,7 +61,7 @@ class TweetList extends React.Component {
       //     "author": "Michael Scott",
       //     "text": "Would I rather be feared or loved? Easy, both. I want people to be afraid of how much they love me."
       // }
-      
+
       // second datum: {
       //     "author": "Jeff Bezos",
       //     "text": "In the end, we are our choices."
@@ -103,6 +92,6 @@ class Tweet extends React.Component {
 }
 
 ReactDOM.render(
-  <Twitter data={ arrOfTweets } />,
+  <Twitter />,
   document.getElementById('tweets')
 );
